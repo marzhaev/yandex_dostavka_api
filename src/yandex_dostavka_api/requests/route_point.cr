@@ -20,15 +20,19 @@ module YandexDostavkaApi
       @[JSON::Field(key: "visit_order")]
       property visit_order : Int32
 
+      # Пропускать подтверждение через SMS в данной точке
+      @[JSON::Field(key: "skip_confirmation")]
+      property skip_confirmation : Bool = true
+
       # Номер заказа из системы клиента. Передается для точки с типом destination
       @[JSON::Field(key: "external_order_id")]
       property external_order_id : String?
 
-      # Комментарий для водителя на точке
-      @[JSON::Field(key: "comment")]
-      property comment : String?
-
       def initialize(@address : Entity::Address, @contact : Entity::Contact, @point_id : Int32, @type : Entity::RoutePointType, @visit_order : Int32)
+      end
+
+      def comment=(value : String)
+        @address.comment = value
       end
     end
   end

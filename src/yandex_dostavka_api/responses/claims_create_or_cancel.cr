@@ -1,6 +1,6 @@
 module YandexDostavkaApi
   module Response
-    class ClaimsCancel
+    class ClaimsCreateOrCancel
       include JSON::Serializable
       include JSON::Serializable::Strict
 

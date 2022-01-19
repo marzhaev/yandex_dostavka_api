@@ -10,6 +10,18 @@ module YandexDostavkaApi
       @[JSON::Field(key: "corp_client_id" )]
       property corp_client_id : String
 
+      @[JSON::Field(key: "callback_properties" )]
+      property callback_properties : CallbackProperty?
+
+      @[JSON::Field(key: "carrier_info" )]
+      property carrier_info : CarrierInfo?
+
+      @[JSON::Field(key: "comment" )]
+      property comment : String?
+
+      @[JSON::Field(key: "error_messages" )]
+      property error_messages : Array(ErrorMessage)?
+
       @[JSON::Field(key: "items" )]
       property items : Array(Item)
 

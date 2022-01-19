@@ -12,6 +12,10 @@ module YandexDostavkaApi
     def initialize(@api_token : String)
     end
 
+    def claims_accept(claim_id : String, version : Int32)
+      ClaimsAccept.fetch(self, claim_id, version)
+    end
+
     # Methods for Yandex Dostavka API
     def claims_cancel(claim_id : String, request : Request::ClaimsCancel) : String
       ClaimsCancel.fetch(self, claim_id, request)

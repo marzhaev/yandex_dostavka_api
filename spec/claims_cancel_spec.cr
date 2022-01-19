@@ -1,9 +1,9 @@
 require "./spec_helper"
 
-describe YandexDostavkaApi::Response::ClaimsCancel do
+describe YandexDostavkaApi::Response::ClaimsCreateOrCancel do
   it "parses response executed claim" do
     content = File.read("./spec/claims_cancel_input.json")
-    obj = YandexDostavkaApi::Response::ClaimsCancel.from_json(content)
+    obj = YandexDostavkaApi::Response::ClaimsCreateOrCancel.from_json(content)
     obj.id.should eq("f4cc29a88c304ddab73f41451dc2394e")
     obj.status.cancelled?.should be_true
     obj.version.should eq(1)
