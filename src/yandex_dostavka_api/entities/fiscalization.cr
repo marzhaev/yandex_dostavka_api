@@ -35,4 +35,8 @@ private struct SupplierInnConverter
       return nil
     end
   end
+
+  def self.to_json(value : String, json : JSON::Builder)
+    json.string value
+  end
 end

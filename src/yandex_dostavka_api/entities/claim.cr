@@ -89,33 +89,65 @@ module YandexDostavkaApi
     end
 
     enum Status
-    New
-    Estimating
-    EstimatingFailed
-    ReadyForApproval
-    Accepted
-    PerformerLookup
-    PerformerDraft
-    PerformerFound
-    PerformerNotFound
-    PickupArrived
-    ReadyForPickupConfirmation
-    Pickuped
-    DeliveryArrived
-    ReadyForDeliveryConfirmation
-    PayWaiting
-    Delivered
-    DeliveredFinish
-    Returning
-    ReturnArrived
-    ReadyForReturnConfirmation
-    Returned
-    ReturnedFinish
-    Failed
-    Cancelled
-    CancelledWithPayment
-    CancelledByTaxi
-    CancelledWithItemsOnHands
+      New
+      Estimating
+      EstimatingFailed
+      ReadyForApproval
+      Accepted
+      PerformerLookup
+      PerformerDraft
+      PerformerFound
+      PerformerNotFound
+      PickupArrived
+      ReadyForPickupConfirmation
+      Pickuped
+      DeliveryArrived
+      ReadyForDeliveryConfirmation
+      PayWaiting
+      Delivered
+      DeliveredFinish
+      Returning
+      ReturnArrived
+      ReadyForReturnConfirmation
+      Returned
+      ReturnedFinish
+      Failed
+      Cancelled
+      CancelledWithPayment
+      CancelledByTaxi
+      CancelledWithItemsOnHands
+
+      def to_rus : String
+        case self
+        in New then "Новая - New"
+        in Estimating then "Идёт оценка - Estimating"
+        in EstimatingFailed then "Ошибка оценки - EstimatingFailed"
+        in ReadyForApproval then "Готов к подтверждению - ReadyForApproval"
+        in Accepted then "Принята - Accepted"
+        in PerformerLookup then "Поиск курьера - PerformerLookup"
+        in PerformerDraft then "Поиск курьера - PerformerDraft"
+        in PerformerFound then "Курьер найден - PerformerFound"
+        in PerformerNotFound then "Курьер не найден - PerformerNotFound"
+        in PickupArrived then "Приехал на загрузку - PickupArrived"
+        in ReadyForPickupConfirmation then "Готов к СМС на загрузку - ReadyForPickupConfirmation"
+        in Pickuped then "Совершил забор - Pickuped"
+        in DeliveryArrived then "Приехал на разгрузки - DeliveryArrived"
+        in ReadyForDeliveryConfirmation then "Готов к СМС на разгрузку - ReadyForDeliveryConfirmation"
+        in PayWaiting then "Ожидает оплаты - PayWaiting"
+        in Delivered then "Завершена - Delivered"
+        in DeliveredFinish then "Завершена - DeliveredFinish"
+        in Returning then "Идёт возврат - Returning"
+        in ReturnArrived then "Приехал на возврат - ReturnArrived"
+        in ReadyForReturnConfirmation then "Готов к СМС на возврат - ReadyForReturnConfirmation"
+        in Returned then "Вернул - Returned"
+        in ReturnedFinish then "Вернул - ReturnedFinish"
+        in Failed then "Ошибка - Failed"
+        in Cancelled then "Отменена - Cancelled"
+        in CancelledWithPayment then "Отменена с оплатой - CancelledWithPayment"
+        in CancelledByTaxi then "Отменена курьером - CancelledByTaxi"
+        in CancelledWithItemsOnHands then "Отменена, товар не вернули - CancelledWithItemsOnHands"
+        end
+      end
     end
   end
 end
