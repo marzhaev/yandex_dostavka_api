@@ -5,7 +5,7 @@ module YandexDostavkaApi
       include JSON::Serializable::Strict
 
       @[JSON::Field(key: "client_requirements" )]
-      property client_requirements : Request::ClientRequirements
+      property client_requirements : Request::ClientRequirements?
 
       # Комментарий для водителя
       @[JSON::Field(key: "comment" )]
@@ -29,7 +29,12 @@ module YandexDostavkaApi
       @[JSON::Field(key: "route_points" )]
       property route_points : Array(Request::RoutePoint)
 
-      def initialize(@client_requirements : Request::ClientRequirements, @emergency_contact : Entity::Contact, @items : Array(Entity::Item), @route_points : Array(Request::RoutePoint))
+      def initialize(@client_requirements : Request::ClientRequirements? = nil, emergency_contact : Entity::Contact? = nil, @items : Array(Entity::Item) = [] of Entity::Item, @route_points : Array(Request::RoutePoint) = [] of Request::RoutePoint)
+        if ec = emergency_contact
+          @emergency_contact = ec
+        else
+          @emergency_contact = Entity::Contact.new(name: "Без имени", phone: "Неправильный телефон")
+        end
       end
     end
   end

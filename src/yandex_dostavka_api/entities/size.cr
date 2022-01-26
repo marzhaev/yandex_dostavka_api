@@ -5,15 +5,15 @@ module YandexDostavkaApi
       include JSON::Serializable::Strict
 
       @[JSON::Field(key: "length")]
-      property length : Float32
+      property length : Float64
 
       @[JSON::Field(key: "width")]
-      property width : Float32
+      property width : Float64
 
       @[JSON::Field(key: "height")]
-      property height : Float32
+      property height : Float64
 
-      def initialize(@length : Float32, @width : Float32, @height : Float32)
+      def initialize(@length : Float64, @width : Float64, @height : Float64)
       end
     end
   end

@@ -20,7 +20,7 @@ module YandexDostavkaApi
       property fiscalization : Fiscalization?
 
       @[JSON::Field(key: "weight")]
-      property weight : Float32
+      property weight : Float64
 
       @[JSON::Field(key: "cost_value")]
       getter cost_value : String
@@ -36,7 +36,7 @@ module YandexDostavkaApi
       property extra_id : String?
 
       # fiscalization
-      def initialize(@pickup_point : Int32 = 0, @droppof_point : Int32 = 0, @title : String = "Товары", @size : Size = Size.new(0, 0, 0), @weight : Float32 = 0.0, @quantity : Int32 = 1, cost_value : Float64 = 0.0, @extra_id : String? = nil)
+      def initialize(@pickup_point : Int32 = 0, @droppof_point : Int32 = 0, @title : String = "Товары", @size : Size = Size.new(0, 0, 0), @weight : Float64 = 0.0, @quantity : Int32 = 1, cost_value : Float64 = 0.0, @extra_id : String? = nil)
         @cost_value = cost_value.to_s
       end
 

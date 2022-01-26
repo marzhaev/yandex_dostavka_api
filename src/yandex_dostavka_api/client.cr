@@ -12,6 +12,10 @@ module YandexDostavkaApi
     def initialize(@api_token : String)
     end
 
+    def check_price(request : Request::CheckPrice)
+      CheckPrice.fetch(self, request)
+    end
+
     def claims_accept(claim_id : String, version : Int32)
       ClaimsAccept.fetch(self, claim_id, version)
     end

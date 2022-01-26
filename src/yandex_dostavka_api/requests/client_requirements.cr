@@ -14,7 +14,7 @@ module YandexDostavkaApi
       property cargo_options : Array(Entity::CourrierOptions) = [] of Entity::CourrierOptions
 
       @[JSON::Field(key: "cargo_type" )]
-      property cargo_type : Entity::CargoType
+      property cargo_type : Entity::CargoType?
 
       @[JSON::Field(key: "pro_courier" )]
       property pro_courier : Bool = false
@@ -22,7 +22,7 @@ module YandexDostavkaApi
       @[JSON::Field(key: "taxi_class" )]
       property taxi_class : Entity::TaxiClass
 
-      def initialize(@cargo_type : Entity::CargoType, @taxi_class : Entity::TaxiClass)
+      def initialize(@cargo_type : Entity::CargoType?, @taxi_class : Entity::TaxiClass)
       end
     end
   end

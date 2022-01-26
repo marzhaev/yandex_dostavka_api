@@ -33,12 +33,14 @@ module YandexDostavkaApi
     Courier
     Express
     Cargo
+    Cargocorp
     end
 
     enum CargoType
     Van = 1
     LcvM = 2
     LcvL = 3
+    Sedan = 4
     end
   end
 end
