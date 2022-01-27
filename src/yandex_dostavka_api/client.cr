@@ -16,7 +16,7 @@ module YandexDostavkaApi
       CheckPrice.fetch(self, request)
     end
 
-    def claims_accept(claim_id : String, version : Int32)
+    def claims_accept(claim_id : String, version : Int32) : Response::ClaimsCreateOrCancel
       ClaimsAccept.fetch(self, claim_id, version)
     end
 

@@ -22,10 +22,8 @@ module YandexDostavkaApi
       puts "===== RESPONSE ====="
       pp response
 
-      puts "===== BODY ====="
-      puts response.body
-
-      return response.body
+      json = JSON.parse(response.body)
+      return json["id"].as_s
     end
   end
 end

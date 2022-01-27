@@ -28,6 +28,9 @@ module YandexDostavkaApi
       @[JSON::Field(key: "route_points" )]
       property route_points : Array(RoutePoint)
 
+      @[JSON::Field(key: "shipping_document" )]
+      property shipping_document : String?
+
       @[JSON::Field(key: "current_point_id" )]
       property current_point_id : Int32
 
@@ -38,18 +41,18 @@ module YandexDostavkaApi
       property version : Int32
 
       @[JSON::Field(key: "user_request_revision" )]
-      property user_request_revision : String
+      property user_request_revision : String?
 
       @[JSON::Field(key: "emergency_contact" )]
       property emergency_contact : Contact
 
       {% for f in ["skip_door_to_door", "skip_client_notify", "skip_emergency_notify", "skip_act", "optional_return"] %}
         @[JSON::Field(key: {{ f.id.stringify}} )]
-        property {{ f.id }} : Bool
+        property {{ f.id }} : Bool?
       {% end %}
 
       @[JSON::Field(key: "eta" )]
-      property eta : Int32
+      property eta : Int32?
 
       {% for f in ["created_ts", "updated_ts"] %}
         @[JSON::Field(key: {{ f.id.stringify}} )]
@@ -57,13 +60,13 @@ module YandexDostavkaApi
       {% end %}
 
       @[JSON::Field(key: "taxi_offer" )]
-      property taxi_offer : PriceOffer
+      property taxi_offer : PriceOffer?
 
       @[JSON::Field(key: "pricing" )]
-      property pricing : Pricing
+      property pricing : Pricing?
 
       @[JSON::Field(key: "client_requirements" )]
-      property client_requirements : CarInfo
+      property client_requirements : CarInfo?
 
       @[JSON::Field(key: "matched_cars" )]
       property matched_cars : Array(CarInfo)
