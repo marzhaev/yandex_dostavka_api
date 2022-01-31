@@ -1,6 +1,6 @@
 module YandexDostavkaApi
   class ClaimsCancel < MethodsWrapper
-    def self.fetch(client : Client, claim_id : String, request : Request::ClaimsCancel) : Entity::ClaimsCreateOrCancel
+    def self.fetch(client : Client, claim_id : String, request : Request::ClaimsCancel) : Response::ClaimsCreateOrCancel
       url = String.build do |io|
         io << "https://b2b.taxi.yandex.net/b2b/cargo/integration/v1/claims/cancel?"
         io << "claim_id="
@@ -19,7 +19,7 @@ module YandexDostavkaApi
 
       check_response(response)
 
-      return Entity::ClaimsCreateOrCancel.from_json(response.body)
+      return Response::ClaimsCreateOrCancel.from_json(response.body)
     end
   end
 end

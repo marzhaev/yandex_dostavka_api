@@ -21,7 +21,7 @@ module YandexDostavkaApi
     end
 
     # Methods for Yandex Dostavka API
-    def claims_cancel(claim_id : String, request : Request::ClaimsCancel) : String
+    def claims_cancel(claim_id : String, request : Request::ClaimsCancel) : Response::ClaimsCreateOrCancel
       ClaimsCancel.fetch(self, claim_id, request)
     end
 
