@@ -17,9 +17,7 @@ module YandexDostavkaApi
         body: ""
       )
 
-      check_response(response)
-
-      puts response.body
+      check_response(response, client)
 
       return Entity::Claim.from_json(response.body)
     end

@@ -17,7 +17,7 @@ module YandexDostavkaApi
         body: request.to_json
       )
 
-      check_response(response)
+      check_response(response, client)
 
       return Response::ClaimsCreateOrCancel.from_json(response.body)
     end

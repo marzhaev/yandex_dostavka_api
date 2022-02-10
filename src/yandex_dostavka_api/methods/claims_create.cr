@@ -17,10 +17,12 @@ module YandexDostavkaApi
         body: request.to_json
       )
 
-      check_response(response)
+      if client.print_responses
+        puts "ClaimsCreate - Request:"
+        puts request.to_json
+      end
 
-      puts "===== RESPONSE ====="
-      pp response
+      check_response(response, client)
 
       json = JSON.parse(response.body)
       return json["id"].as_s

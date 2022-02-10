@@ -4,6 +4,9 @@ module YandexDostavkaApi
       include JSON::Serializable
       include JSON::Serializable::Strict
 
+      @[JSON::Field(key: "callback_properties" )]
+      property callback_properties : Entity::CallbackProperty?
+
       @[JSON::Field(key: "client_requirements" )]
       property client_requirements : Request::ClientRequirements?
 

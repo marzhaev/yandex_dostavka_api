@@ -15,9 +15,8 @@ module YandexDostavkaApi
         body: "{\"start_point\":[#{longitude},#{latitude}]}"
       )
 
-      check_response(response)
+      check_response(response, client)
 
-      puts response.body
       return response.body
       # return Entity::Claim.from_json(response.body)
     end

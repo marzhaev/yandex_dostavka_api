@@ -15,9 +15,7 @@ module YandexDostavkaApi
         body: request.to_json
       )
 
-      check_response(response)
-
-      puts response.body
+      check_response(response, client)
 
       return Response::ClaimsSearch.from_json(response.body)
     end

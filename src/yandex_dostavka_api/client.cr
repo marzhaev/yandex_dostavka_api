@@ -8,8 +8,9 @@ require "./requests/*"
 module YandexDostavkaApi
   class Client
     property api_token : String
+    property print_responses : Bool
 
-    def initialize(@api_token : String)
+    def initialize(@api_token : String, @print_responses : Bool = false)
     end
 
     def check_price(request : Request::CheckPrice)
