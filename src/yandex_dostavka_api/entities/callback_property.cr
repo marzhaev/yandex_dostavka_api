@@ -6,6 +6,9 @@ module YandexDostavkaApi
 
       @[JSON::Field(key: "callback_url" )]
       property callback_url : String
+
+      def initialize(@callback_url : String)
+      end
     end
   end
 end
