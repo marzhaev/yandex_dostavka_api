@@ -3,7 +3,6 @@ module YandexDostavkaApi
   module Entity
     class RoutePoint
       include JSON::Serializable
-      include JSON::Serializable::Strict
 
       @[JSON::Field(key: "address")]
       property address : Address
@@ -36,7 +35,6 @@ module YandexDostavkaApi
 
       @[JSON::Field(key: "skip_confirmation")]
       property skip_confirmation : Bool?
-
 
       @[JSON::Field(key: "type")]
       property type : RoutePointType
