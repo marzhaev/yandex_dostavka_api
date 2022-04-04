@@ -42,6 +42,10 @@ module YandexDostavkaApi
       ClaimsSearchActive.fetch(self, request)
     end
 
+    def claims_journal(cursor : String? = nil)
+      ClaimsJournal.fetch(self, cursor)
+    end
+
     def tariffs(longitude : Float32, latitude : Float32) : String
       Tariffs.fetch(self, longitude, latitude)
     end
