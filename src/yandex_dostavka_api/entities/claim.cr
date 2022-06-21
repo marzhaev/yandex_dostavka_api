@@ -2,7 +2,6 @@ module YandexDostavkaApi
   module Entity
     class Claim
       include JSON::Serializable
-      include JSON::Serializable::Strict
 
       @[JSON::Field(key: "id" )]
       property id : String
