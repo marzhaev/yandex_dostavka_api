@@ -7,5 +7,5 @@ require "./yandex_dostavka_api/methods/*"
 require "./yandex_dostavka_api/requests/*"
 
 module YandexDostavkaApi
-  VERSION = "0.1.10"
+  VERSION = "0.1.11"
 end

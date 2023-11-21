@@ -6,7 +6,7 @@ module YandexDostavkaApi
       include JSON::Serializable::Strict
 
       @[JSON::Field(key: "point_id")]
-      property point_id : Int32
+      property point_id : Int64
 
       @[JSON::Field(key: "contact")]
       property contact : Entity::Contact
@@ -28,7 +28,7 @@ module YandexDostavkaApi
       @[JSON::Field(key: "external_order_id")]
       property external_order_id : String?
 
-      def initialize(@address : Entity::Address, @contact : Entity::Contact, @point_id : Int32, @type : Entity::RoutePointType, @visit_order : Int32)
+      def initialize(@address : Entity::Address, @contact : Entity::Contact, @point_id : Int64, @type : Entity::RoutePointType, @visit_order : Int32)
       end
 
       def comment=(value : String)

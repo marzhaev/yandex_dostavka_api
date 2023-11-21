@@ -26,7 +26,7 @@ module YandexDostavkaApi
       property client_id : String?
 
       @[JSON::Field(key: "current_point_id" )]
-      property current_point_id : Int32?
+      property current_point_id : Int64?
 
       @[JSON::Field(key: "new_currency" )]
       property new_currency : String?

@@ -31,7 +31,7 @@ module YandexDostavkaApi
       property shipping_document : String?
 
       @[JSON::Field(key: "current_point_id" )]
-      property current_point_id : Int32
+      property current_point_id : Int64
 
       @[JSON::Field(key: "status" )]
       property status : Status
